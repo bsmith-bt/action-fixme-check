@@ -1,8 +1,8 @@
 # action-fixme-check
 
-Checks the code base for any `FIXME:` (with the colon) and fails the check if
-any are found. Useful if you want to make sure that you don't miss any required
-changes in the code base before merging a PR.
+Checks the code base for any `FIXME:` or `FIXME(username):` (with the colon) and
+fails the check if any are found. Useful if you want to make sure that you don't
+miss any required changes in the code base before merging a PR.
 
 It runs very fast, taking only a few seconds to finish even on a very large
 codebase. All files in the repository will be read, including binary files (it
@@ -29,7 +29,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-    - uses: bbugh/action-fixme-check@master # or @ the latest release
+    - uses: bsmith-bt/action-fixme-check@master # or @ the latest release
 ```
 
 ## Support
