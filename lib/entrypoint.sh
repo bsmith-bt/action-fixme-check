@@ -9,7 +9,8 @@ cp /git-grep-problem-matcher.json "$matcher_path"
 echo "::add-matcher::git-grep-problem-matcher.json"
 
 tag="FIXME"
-result=$(git grep --no-color -n -e "${tag}:")
+# See test/should-match for examples of FIXMEs that should match
+result=$(git grep --no-color -n -E -e "${tag}\s*(\([^)]+\))?\s*:")
 
 echo "${result}"
 
